@@ -1,4 +1,4 @@
-import {MemoryRouter as Router,Route, Routes} from "react-router-dom"; //MemoryRouter for ghpages
+import {BrowserRouter as Router,Route, Routes} from "react-router-dom";
 import './css/style.css';
 import Static from "./components/Static";
 import Main from "./pages/Main";

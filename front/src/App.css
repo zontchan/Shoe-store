@@ -1,0 +1,53 @@
+.App{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh
+}
+main{
+  flex: 1;
+}
+body {
+    font-family: 'Roboto', sans-serif;
+  box-sizing: border-box;
+}
+
+a {
+  color: #727e86;
+}
+
+a, a:hover, a:visited, a:active {
+  text-decoration: none;
+}
+
+a:hover {
+  cursor: pointer;
+}
+
+section {
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+.invisible {
+  opacity: 0;
+}
+
+/* Bootstrap */
+.nav-link.active {
+  color: #ff0000;
+}
+
+h2, .h2 {
+  margin-bottom: 1.5em;
+  margin-top: 2em;
+}
+
+.btn-outline-primary {
+  color: #727e86;
+  border-color: #727e86;
+}
+
+.btn-outline-primary:hover {
+  background-color: #727e86;
+  border-color: #727e86;
+}

@@ -12,7 +12,6 @@ export default function BestSellers() {
         dispatch(getBestSellers());
     }, []);
 
-
     return (
             <section className="top-sales">
                 <h2 className="text-center">Хиты продаж!</h2>

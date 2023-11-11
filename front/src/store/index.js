@@ -1,4 +1,3 @@
-
 import { configureStore } from '@reduxjs/toolkit';
 import bestSellersReducer from "../reducers/bestSellersReducer";
 import categoriesReducer from "../reducers/categoriesReducer";

@@ -12,7 +12,6 @@ export default function CatalogPage() {
 
     useEffect(() => {
        setValue(catalog.searchValue)
-           // dispatch(getProducts(0));  //из за этого ухожят два запроса при смене текста в поле поиска и повторном поиске
         dispatch(setIsMore(true));
    }, [catalog.searchValue]);
 

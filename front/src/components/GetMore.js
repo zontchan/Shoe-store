@@ -1,4 +1,3 @@
-
 import {getProducts} from "../reducers/catalogReducer";
 import {useDispatch} from "react-redux";
 import ErrorMessage from "./ErrorMessage";

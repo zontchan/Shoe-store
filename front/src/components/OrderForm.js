@@ -1,10 +1,11 @@
 import {useEffect, useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
-import {clearOrderState, clearSuccess, sendOrder} from "../reducers/orderReducer";
+import {clearOrderState, sendOrder} from "../reducers/orderReducer";
 import Preloader from "./Preloader";
 import {clearCart} from "../reducers/cartReducer";
 import {useNavigate} from "react-router-dom";
 import ErrorMessage from "./ErrorMessage";
+import {InputMask} from 'primereact/inputmask';
 
 export default function OrderForm() {
     const {loading, error, success} = useSelector((state) => state.order);
@@ -34,14 +35,12 @@ export default function OrderForm() {
         setFormData({phone: '', address: '', isChecked: false});
     }
     const handleChange = (e) => {
-        console.log(e.target.id)
         if(error) dispatch(clearOrderState());
         if(e.target.id === 'agreement') setFormData(prevState => ({...prevState, isChecked: e.target.checked}));
         setFormData(prevState => ({...prevState, [e.target.id]: e.target.value}))
     }
 
-    useEffect(() => { //Когда форма успешно отправилась, очищаем корзину, переходим на финальную страницу оформления заказа и очищаем статус успешной отправки
-        //формы, чтобы при переходе на эту страницу без перезагрузки нас не перекидывало обратно на финальную стр.
+    useEffect(() => {
         if(success) {
             dispatch(clearCart());
             navigate('/order-done');
@@ -57,13 +56,13 @@ export default function OrderForm() {
                 <form className="card-body" onSubmit={(e) => handleSubmit(e)}>
                     <div className="form-group">
                         <label htmlFor="phone">Телефон</label>
-                        <input
-                            className="form-control"
-                            id="phone"
-                            placeholder="Ваш телефон"
-                            required={true}
-                            value={formData.phone}
-                            onChange={(e) => handleChange(e)}
+                        <InputMask className="form-control"
+                                   id="phone"
+                                   value={formData.phone}
+                                   onChange={(e) => handleChange(e)}
+                                   required={true}
+                                   mask="+7(999)-999-9999"
+                                   placeholder="Ваш телефон"
                         />
                     </div>
                     <div className="form-group">

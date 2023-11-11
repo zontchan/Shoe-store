@@ -9,7 +9,7 @@ export const getBestSellers = createAsyncThunk(
     'getBestSellers',
     async (phoneNumber, {rejectWithValue}) => {
         try {
-            const response = await fetch(`http://localhost:7070/api/top-sales`);
+            const response = await fetch(`${process.env.REACT_APP_BASE_URL}top-sales`);
 
             if (response.status !== 200) {
                 throw new Error('Server Error!');

@@ -50,7 +50,7 @@ export const catalog = createSlice({
     },
 });
 
-const baseUrl = 'http://localhost:7070/api/';
+const baseUrl = process.env.REACT_APP_BASE_URL;
 export const getProducts = (offset) => async (dispatch, getState) => {
     const { catalog: { searchValue }, categories: { categoryId },  } = getState();
     dispatch(getProductsRequest(true));
@@ -79,7 +79,6 @@ export const getProducts = (offset) => async (dispatch, getState) => {
         }
     }
 };
-
 
 export const {setIsMore,
               setSearchValue,

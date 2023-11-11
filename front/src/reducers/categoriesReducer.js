@@ -11,7 +11,7 @@ export const getCategories = createAsyncThunk(
     'getCategories',
     async (arg, {rejectWithValue}) => {
         try {
-            const response = await fetch(`http://localhost:7070/api/categories`);
+            const response = await fetch(`${process.env.REACT_APP_BASE_URL}categories`);
 
             if (response.status !== 200) {
                 throw new Error('Server Error!');

@@ -10,7 +10,7 @@ export const sendOrder = createAsyncThunk(
     'sendOrder',
     async (data, {rejectWithValue}) => {
         try {
-            const response = await fetch(`http://localhost:7070/api/order`, {
+            const response = await fetch(`${process.env.REACT_APP_BASE_URL}order`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

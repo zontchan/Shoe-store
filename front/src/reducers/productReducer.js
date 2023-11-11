@@ -10,7 +10,7 @@ export const getProduct = createAsyncThunk(
     'getProduct',
     async (id, {rejectWithValue}) => {
         try {
-            const response = await fetch(` http://localhost:7070/api/items/${id}`);
+            const response = await fetch(`${process.env.REACT_APP_BASE_URL}items/${id}`);
 
             if (response.status !== 200) {
                 throw new Error('Server Error!');
